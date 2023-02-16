@@ -12,7 +12,4 @@ export class AppComponent {
     name: 'tuấn',
     age: 25,
   };
-  handle() {
-    console.log('Click me');
-  }
 }

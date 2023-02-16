@@ -1,6 +1,9 @@
-{{ name }}
-
-<p>lorem ipsum dolor sit amet</p>
-<p>{{ user.name }} - {{ user.age }}</p>
-<input type="text" value="{{ user.name }}" />
-<button type="button" (click)="handle()">Click me</button>
+<app-hello *ngIf="user.age >= 18; else under18" [name]="user.name"></app-hello>
+<ng-template #under18>
+  <div>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, tempora.
+  </div>
+</ng-template>
+<button (click)="user.age = user.age - 1">-</button>
+Age: {{ user.age }}
+<button (click)="user.age = user.age + 1">+</button>
