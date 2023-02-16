@@ -1,0 +1,10 @@
+<!-- Class Binding
+Style Binding -->
+<div
+  class="box"
+  [class.red-border]="isDanger"
+  [class.yellow-background]="isWarning"
+></div>
+<button (click)="isDanger = !isDanger">Toggle Danger</button>
+
+<button (click)="isWarning = !isWarning">Toggle Warning</button>
