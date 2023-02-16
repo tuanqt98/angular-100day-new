@@ -1,0 +1,39 @@
+<p>lorem ipsum dolor sit amet, consects</p>
+<!-- 
+  index: số thứ tự của item hiện tại
+  count: độ dài của array
+  first: true nếu item đó là item đầu tiên trong arr
+  last: true nếu item đó là item cuối trong arr
+  even: true nếu như item đó là item vị trí chẵn
+  odd: true nếu như item đó là item vị trí lẻ
+ -->
+<ul>
+  <li
+    *ngFor="
+      let u of users;
+      index as idx;
+      count as total;
+      first as isFirst;
+      last as isLast;
+      odd as isOdd;
+      even as isEven
+    "
+  >
+    <span> {{ u.name }} - {{ u.id }} - {{ u.phone }}</span>
+    <br />
+    <br />
+    <span>at index {{ idx }} out of {{ total }}</span>
+    <br /><br />
+    <span *ngIf="isEven"> I am even number</span>
+    <br />
+    <span *ngIf="isOdd"> I am odd number</span>
+    <br />
+    <span *ngIf="isFirst"> I am first</span>
+    <br />
+    <span *ngIf="isLast"> I am last</span>
+    <br />
+  </li>
+</ul>
+<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">
+  {{ tag }}
+</button>
